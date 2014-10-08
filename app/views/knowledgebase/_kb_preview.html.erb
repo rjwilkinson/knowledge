@@ -1,0 +1,42 @@
+<div class="row">
+ <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+
+    <% @all_articles.each do |a| %>
+      <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="kb-id-head"># <%= a.id %></th>
+                  <th><h2 id="kb-title"><%= a.title %></h2></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2"><%= image_tag('article_placeholder.gif', alt: "icon", class: "kb-icon") %></td>
+                  <td id="kb-sub-title"><%= a.sub_title %>...
+                    <a href="/knowledgebase/<%= a.id %>">View</a> <br />
+                     <% if admin? %>
+                     <br />
+                      <a href="#">Edit</a> <br />
+                     <% end %>
+                    </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+      </div>
+      <% end %>
+
+  
+  </div>
+
+ <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+ <div id="tagbar-help">
+  <%= render 'knowledgebase/tagbar' %> <br />
+ </div>
+  <%= render 'knowledgebase/sort_bar' %>
+
+  </div>
+</div>

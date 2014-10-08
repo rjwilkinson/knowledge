@@ -1,0 +1,16 @@
+
+<!-- renders a flash message -->
+<div class="row">
+  <div class="col-xs-2 col-sm-3 col-md-4 col-lg-4">
+  </div>
+  <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4 text-center">
+    <% flash.each do |name, msg| %>
+      <p class="message bg-<%= name == 'success' ? "success" : "error" %>">
+        <%= msg if msg.is_a?(String) %>
+        </p>
+   </div>
+  <div class="col-xs-2 col-sm-3 col-md-4 col-lg-4">
+  </div>
+  
+    <% end %>
+</div>

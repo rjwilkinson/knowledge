@@ -1,0 +1,16 @@
+
+// This is used to style the knowledgebase/new page
+
+.kb-new-content{
+width:100%;
+height:250px;
+}
+
+.kb-new-title{
+width:50%;
+}
+
+.kb-new-sub-title{
+width:50%;
+height:50px;
+}

@@ -1,0 +1,44 @@
+
+<div class="page-header text-center">
+  <h1>Logon</h1>
+</div>
+
+<p class="text-center">Enter your details below to access the secret page</p>
+
+
+<%= render 'shared/message' %>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+          <%= form_tag('/perform_logon', method: :get, :class => 'form-group') do %>
+          <%= label_tag(:user_number, "User Number:") %> <br />
+          <%= text_field_tag(:user_number) %> <br /> <br />       
+          <%= label_tag(:postcode, "Postcode:") %> <br />
+          <%= text_field_tag(:postcode) %> <br /><br />
+          <%= submit_tag("Logon") %>
+      <% end %>
+    </div>
+  </div>
+
+<div>
+
+<% if @error_message.present? %>
+  <div>
+    There was a problem, have a look a the following message:
+    <br />
+    <br />
+    <ul>
+    <% @error_message.each do |msg| %>
+     <li><%= msg %></li>    
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= @sessionid %>
+
+<div>
+  <%= debug @sessionid %>
+
+</div>

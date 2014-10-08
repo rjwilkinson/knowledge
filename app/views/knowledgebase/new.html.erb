@@ -1,0 +1,17 @@
+<!-- Adding a new article -->
+
+<%= form_for @article, url: knowledgebase_path, method: :post do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_area :title, class: 'kb-new-title' %>
+  </p>
+  <p>
+    <%= f.label :sub_title %><br />
+    <%= f.text_area :sub_title, class: 'kb-new-sub-title' %>
+  </p>
+  <p>
+    <%= f.label :content  %><br />
+    <%= f.text_area :content, class: 'kb-new-content' %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

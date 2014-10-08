@@ -1,0 +1,17 @@
+
+<!-- have the ability to re-display the list of results with a selection of 3 views: grid, list or tile -->
+
+<div>
+<h4>Menu bar</h4>
+<table>
+<tr>
+<% if admin? %>
+<td><%= link_to "Create new article", new_knowledgebase_path %></td>
+<% end %>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+
+

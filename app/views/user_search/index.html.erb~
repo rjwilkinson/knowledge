@@ -1,0 +1,71 @@
+
+
+<div class="page-header text-center">
+  <h1>User Search</h1>
+
+</div>
+
+
+
+  <div class="row">
+
+   <p class="text-center">Enter the user number to look for details...</p>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <%= form_tag(search_path, method: "get" ) do %>
+
+          <%= text_field_tag(:user_number) %><br /><br />
+          <p><%= submit_tag("Search") %></p>
+        <% end %>
+          <br />
+
+    </div>
+  </div>
+
+  <br /><br />
+<div class="row">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <% if @search_result %>
+    <table class="table user-result-table">
+     <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+        <td>User Number:</td>
+        <td><%= @search_result.user_number %></td>
+      </tr>
+      <tr>
+        <td>Postcode:</td>
+        <td><%= @search_result.postcode %></td>
+      </tr>
+      <tr>
+        <td>Helpdesk Subscription Expiry:</td>
+        <td><%= @search_result.help_desk_expiry.strftime("%v") if @search_result.help_desk_expiry.present? %></td>
+      </tr>
+      <tr>
+        <td>Currently Subscribed?</td>
+        <%= is_subscribed(@search_result.help_desk_expiry) %>
+      </tr>
+      <tr>
+        <td>Customer Name:</td>
+        <td><%= @search_result.company_name %></td>
+      </tr>
+      <tr>
+        <td>Products</td>
+          <td><% @search_result.products.split('|').each do |product| %>
+        <%= product %><br />
+        <% end %></td>
+     </tbody>
+    </table>
+  <% end %>
+ </div>
+</div>
+
+
+<div>
+    <%= flash[:notice] if flash %>
+</div>
+

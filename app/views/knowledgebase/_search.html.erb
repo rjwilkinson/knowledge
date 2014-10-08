@@ -1,0 +1,49 @@
+<!-- Search bar -->
+
+
+
+
+<div class="row" style="margin-top:10px;">
+
+
+
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+      <%= form_tag knowledgebase_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], id: 'kb-search-form', placeholder: 'Search for your query...' %>
+        
+        <%= hidden_field_tag :tag, params[:tag] %>
+        <%= hidden_field_tag :view, params[:view] %>
+        
+   </div>
+   <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+        
+        <%= submit_tag "Search", id: 'kb-search-btn', :name => nil %>   
+        <span id="kb-search-filter"><%= image_tag('filtericon.png', alt: "Filter icon", title: "Filter?", id: "article-filter") %></span>
+      <% end %>
+    </div>    
+
+</div>
+
+
+
+
+<br />
+
+<!-- Create a hidden filter pane -->
+<div id="divery1" class="row" style="display:none;">
+ <p class="text-center">  Click on an image to filter these by product/category...</p>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+
+        <%= image_tag('j.nethosted.jpg', alt: "Junior.net Hosted", width: "150px", height: "100px") %>  
+        <%= image_tag('e.net.jpg', alt: "icon", width: "150px", height: "100px") %>       
+        <%= image_tag('j3.jpg', alt: "icon", width: "150px", height: "100px") %>
+        <%= image_tag('e2.jpg', alt: "icon", width: "150px", height: "100px") %>
+        <%= image_tag('e.nethosted.jpg', alt: "icon", width: "150px", height: "100px") %>
+        
+        <br /> 
+        <hr>
+  </div>
+ 
+</div><!-- End of hidden filter pane -->
+
+<!-- End of Search bar -->

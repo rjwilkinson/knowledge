@@ -1,0 +1,9 @@
+class Lookup
+  attr_reader :user_number, :postcode, :helpdesk_expiry, :company_name
+
+
+  def initialize(cust_num)
+    return custom_num    
+  end
+  
+end

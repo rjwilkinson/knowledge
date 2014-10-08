@@ -1,0 +1,32 @@
+// Place all the styles related to the user_search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-result-table tr td{
+width:50%;
+
+}
+
+.user-result-table{
+width:70%;
+}
+
+.message {
+padding:10px;
+}
+
+
+
+.bg-error{
+background-color:#D63030;
+}
+
+
+
+.bg-success{
+background-color:#7ACC52;
+}
+
+body {
+ background-color:#00ff00;
+ }

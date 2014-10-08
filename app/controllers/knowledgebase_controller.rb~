@@ -1,0 +1,55 @@
+class KnowledgebaseController < ApplicationController
+
+ before_filter :authorise, :except => [:index, :show]
+
+
+  def index
+    if params[:tag]
+     begin
+      @all_articles = Tag.find_by_name(params[:tag]).articles
+     rescue
+     end
+    else
+      @all_articles = Article.all    
+    end
+    
+    if params[:search]
+     @all_articles = Article.search(params[:search])
+    end 
+
+    
+    
+  end
+
+ 
+  
+  def show
+   @article = Article.find(params[:id])
+  end
+  
+  
+  def new
+   @article = Article.new
+  end
+  
+  
+  def create
+   @article = Article.new(user_params)
+   if @article.save
+    redirect_to(knowledgebase_path)
+   else
+    render 'new'
+   end
+   
+  end
+  
+  
+  private
+  
+  def user_params
+   params.require(:article).permit(:title, :sub_title, :content)
+  end
+  
+  
+
+end

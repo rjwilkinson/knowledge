@@ -1,0 +1,285 @@
+// Place all the styles related to the knowledgebase controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Variables
+// Themes....
+
+$kb-blue: #2D6DB5;
+$kb-title:#FFB940;
+$kb-sub-title:grey;
+
+.knowledgebase-header{
+background: url('/assets/main_background.png') left top;     // rgb(238, 238, 238);
+ img {
+ opacity:0.6;
+ }
+ 
+
+
+font-size:70px;
+color:#F2F5F0;
+// border-bottom: 2px solid #2461A6;
+border-bottom-width: 0px;
+ border-bottom-style: solid;
+ border-bottom-color: rgb(238, 238, 238);
+//border-radius: 6px 6px 6px 6px;
+// border-top-left-radius: 6px;
+// border-top-right-radius: 6px;
+// border-bottom-right-radius: 6px;
+// border-bottom-left-radius: 6px;
+// margin-left:-15px;
+// margin-right:-15px;
+padding-top: 50px;
+padding-bottom: 50px;
+margin-bottom: 0px;
+padding-left:0;
+padding-right:0;
+
+}
+
+@media (max-width: 510px) {
+.knowledgebase-header{
+font-size:35px;
+  }
+}
+
+
+
+
+.menu-bar{
+background:black;
+width:100%;
+color:white;
+padding-top:14px;
+padding-bottom:14px;
+}
+
+
+.menu-bar ul li{
+display:inline;
+
+
+
+  a{
+    color:grey;
+    padding-left:35px;
+    padding-right:35px;
+
+position:relative;
+
+    }
+    
+  a:hover{
+    color:white;
+    text-decoration:none;
+  }
+ 
+}
+
+
+
+
+#kb-search-btn {
+   background:$kb-blue;
+   border:0;
+   padding: 10px 26px;
+   color: white;
+   font-size: 16px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom:2px;
+
+
+   }
+   
+   
+#kb-search-btn:hover {
+   border-top-color: #28517d;
+   background: #28517d;
+   color: #ccc;
+   }
+   
+   
+#kb-search-btn:active {
+   border-top-color: #3c6682;
+   background: #3c6682;
+   }
+
+
+
+// Start of media query
+
+@media (max-width: 767px) {
+
+ #kb-search-btn{
+  float:right;
+  margin-top:15px;
+ }
+ 
+ #kb-search-filter img {
+ display:none;
+ }
+
+}
+
+
+
+@media (max-width: 991px){
+
+  #created-at{
+  display:none;
+  }
+
+
+}
+
+//End of media query
+
+
+
+#kb-search-filter{
+ width:30px;
+ height:25px;
+ margin-left:4px;
+
+    img {
+ width:25px;
+ height:25px;
+ margin-left:4px;
+  }
+}
+
+
+
+
+
+#kb-search-form{
+width:100%;
+height:42px;
+
+}
+
+#article-filter{
+cursor:pointer;
+cursor:hand;
+}
+
+
+
+// Listing KB articles, table
+
+
+
+.kb-icon{
+width:50px;
+height:50px;
+}
+
+
+#kb-sub-title{
+
+}
+
+
+#kb-title{
+color:$kb-title;
+}
+
+
+.kb-id-head{
+width:50px;
+}
+
+
+
+// Tagbar
+
+#tagbar-help{
+
+background-color: rgb(245, 245, 245);
+font-size: 14px;
+line-height: 20px;
+margin-bottom: 15px;
+margin-top: 0px;
+padding-bottom: 15px;
+padding-top: 8px;
+padding-left:10px;
+border-style:dotted;
+border-width:2px; 
+border-color:#FAF1D2;
+}
+
+ul#tag-list {
+padding-left:0;
+padding-top:10px;
+
+ li{
+ list-style-type:none;
+ display:inline;
+ color:white;
+ margin-left:0;
+ border-style:solid;
+ border-color:black;
+ background-color:black;
+ padding-top:5px;
+ margin-top:3px;
+ border-radius: 6px 6px 6px 6px;
+ border-top-left-radius: 6px;
+ border-top-right-radius: 6px;
+ border-bottom-right-radius: 6px;
+ border-bottom-left-radius: 6px;
+ }
+}
+
+
+
+
+// Tag a links pseudos
+
+ul#tag-list a:link{
+text-decoration:none;
+
+}
+
+ul#tag-list a:visited{
+color:lightpink;
+text-decoration:line-through;
+}
+
+ul#tag-list a:hover{
+text-decoration:none;
+color:black;
+}
+
+
+// Tag li pseudo's
+
+ul#tag-list li:link{
+text-decoration:none;
+color:black;
+background-color:white;
+
+}
+
+ul#tag-list li:hover{
+color:black;
+text-decoration:none;
+background-color:white;
+border-color:white;
+}
+
+
+.sort-right{
+right:10px;
+margin-left:auto;
+}
+
+
+
+
+
+
+

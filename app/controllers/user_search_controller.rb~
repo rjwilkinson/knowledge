@@ -1,0 +1,39 @@
+class UserSearchController < ApplicationController
+
+
+  def show
+  end
+
+  def index
+   @search_result = Search.new(params[:user_number]) if params[:user_number].present?
+
+  end
+
+
+  def handle_error
+      flash[:notice] = "Sorry, something went wrong."
+  end
+
+
+  def logon
+   unless params[:user_number].nil?
+     @login_result = Search.login(params[:user_number], params[:postcode])
+     if @login_result
+       flash.now[:success] = "You have successfully signed in!"
+     else
+       flash.now[:error] = "Those details didn't match, please try again."
+
+     end
+   end
+
+
+  end
+  
+  
+  
+
+
+
+
+
+end
